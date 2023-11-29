@@ -1,5 +1,5 @@
 """
-WSGI config for mblog project.
+WSGI config for mblog0927 project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
