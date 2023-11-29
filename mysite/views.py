@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from mysite.models import Post
+from mysite.models import Post, Comment
 from django.http import HttpResponse
 from datetime import datetime
 from django.shortcuts import redirect
@@ -20,6 +20,12 @@ def showpost(request, slug):
     return render(request, 'post.html', locals())
     #select * from post where slug=%slug
     
+def show_comments(request, post_id):
+    #comments = Comment.objects.filter(post=post_id)
+    comments = Post.objects.get(id=post_id).comment_set.all()
+    return render(request, 'comments.html', locals())
+
+
 import random
 def about(request, num=-1):
     quotes = ['今日事，今日畢',
